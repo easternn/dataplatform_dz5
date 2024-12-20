@@ -56,10 +56,10 @@ def extract_data(spark):
 
 @task
 def transform_data(df):
-    df = df.withColumn("gdp_percent", col("gdp_percent").cast("float"))
-    avg_gdp_df = df.groupBy("year").agg(avg("gdp").alias("average_gdp"))
-    df = df.join(avg_gdp_df, on="year", how="inner")
-    df = df.repartition("year")
+    df = df.withColumn("gdp_percent", col("gdp_percent").cast("float")) # Меняем тип данных для колонки
+    avg_gdp_df = df.groupBy("year").agg(avg("gdp").alias("average_gdp")) # Считаем среднее ввп / год
+    df = df.join(avg_gdp_df, on="year", how="inner") # Объединение
+    df = df.repartition("year") # Репартиционирование
 
     return df
 
