@@ -93,6 +93,6 @@ hive
 
 Внутри выполните следующие запросы
 ```sql
-    USE test_db;
+    USE testdb;
     SELECT * FROM results LIMIT 10;
 ```
