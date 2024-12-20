@@ -1,6 +1,6 @@
 # Руководство по запуску сессии Apache Spark под управлением Prefect
 ## Требования.
-- Запущены сервисы HDFS, YARN и HIVE с базой данных postgresql.
+- Запущены сервисы HDFS, YARN и HIVE с базой данных postgresql, Apache Spark.
 
 ## Шаг 1: Скачивание csv файла и загрузка на hdfs 
 ```bash
